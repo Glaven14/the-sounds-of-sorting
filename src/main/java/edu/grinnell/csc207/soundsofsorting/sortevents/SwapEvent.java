@@ -9,7 +9,10 @@ import java.util.List;
 public class SwapEvent<T> implements SortEvent<T> {
     
     public ArrayList<Integer> affected;
-
+/**
+ * @param i
+ * @param j
+ */
     public SwapEvent(int i, int j) {
         affected = new ArrayList<Integer>();
         affected.add(i);
@@ -31,7 +34,7 @@ public class SwapEvent<T> implements SortEvent<T> {
      * @return a list of the indices affected by this event
      */
     @Override
-    public List<Integer> getAffectedIndices(){
+    public List<Integer> getAffectedIndices() {
         return affected;
     }
 
@@ -40,7 +43,7 @@ public class SwapEvent<T> implements SortEvent<T> {
      * @return <code>true</code> iff this event is emphasized
      */
     @Override
-    public boolean isEmphasized(){
+    public boolean isEmphasized() {
         return true;
     }
 }

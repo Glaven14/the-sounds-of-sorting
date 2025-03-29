@@ -7,7 +7,8 @@ Visual Studio Code: 1.98.0
 
 ## Resources
 *   PM explained the merge and quicksort algorithms in more detail 
-and helped me understand how the audiblizer should work.
+and helped me understand how the audiblizer should work, 
+and helped me solve why MIDI won't open on my device.
 *   Aubrey explained how the SortEvents be implemented.  
 *   Project Assignment Page:
 https://osera.cs.grinnell.edu/ttap/data-structures-labs/the-sounds-of-sorting.html
@@ -21,4 +22,6 @@ https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/Arrays.ht
 https://en.wikipedia.org/wiki/MIDI
 *   Overview of Graphics Class:
 https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html
-*   
+*   ArrayList Documentation:
+https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/ArrayList.html#method-summary
+

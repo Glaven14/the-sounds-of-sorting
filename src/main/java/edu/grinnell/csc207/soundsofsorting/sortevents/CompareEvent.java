@@ -11,6 +11,10 @@ public class CompareEvent<T> implements SortEvent<Integer> {
 
     public ArrayList<Integer> affected;
 
+    /**
+     * @param i
+     * @param j
+     */
     public CompareEvent(int i, int j) {
         affected = new ArrayList<Integer>();
         affected.add(i);
@@ -22,7 +26,7 @@ public class CompareEvent<T> implements SortEvent<Integer> {
      * @param arr the array to modify
      */
     @Override
-    public void apply (Object[] arr) {
+    public void apply(Object[] arr) {
         ((Integer) arr[affected.get(0)]).compareTo((Integer) arr[affected.get(1)]);
     }
 

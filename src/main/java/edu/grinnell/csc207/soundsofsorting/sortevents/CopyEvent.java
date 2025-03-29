@@ -6,11 +6,15 @@ import java.util.List;
 /**
  * A <code>CopyEvent</code> logs a copy of a value into an index of the array.
  */
-public class CopyEvent<T> implements SortEvent{
+public class CopyEvent<T> implements SortEvent {
 
     public List<Integer> indecies;
     public List<T> values;
 
+    /**
+     * @param ind
+     * @param val
+     */
     public CopyEvent(int ind, T val) {
         indecies = new ArrayList<Integer>();
         values = new ArrayList<T>();
@@ -23,7 +27,7 @@ public class CopyEvent<T> implements SortEvent{
      * @param arr the array to modify
      */
     @Override
-    public void apply (Object[] arr) {
+    public void apply(Object[] arr) {
         arr[indecies.get(0)] = values.get(0);
     }
 
@@ -31,7 +35,7 @@ public class CopyEvent<T> implements SortEvent{
      * @return a list of the indices affected by this event
      */
     @Override
-    public List<Integer> getAffectedIndices(){
+    public List<Integer> getAffectedIndices() {
         return indecies;
     }
 
@@ -40,7 +44,7 @@ public class CopyEvent<T> implements SortEvent{
      * @return <code>true</code> iff this event is emphasized
      */
     @Override
-    public boolean isEmphasized(){
+    public boolean isEmphasized() {
         return true;
     }
 }
