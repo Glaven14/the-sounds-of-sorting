@@ -139,6 +139,8 @@ public class ControlPanel extends JPanel {
                 // 1. Create the sorting events list
                 // 2. Add in the compare events to the end of the list
                 List<SortEvent<Integer>> events = new java.util.LinkedList<>();
+                Integer[] arr = new Integer[] {3, 7, 11, 10};
+                events.addAll(generateEvents("Quick", arr));
                 
                 // NOTE: The Timer class repetitively invokes a method at a
                 //       fixed interval.  Here we are specifying that method
@@ -158,6 +160,13 @@ public class ControlPanel extends JPanel {
                             // 3. Play the corresponding notes denoted by the
                             //    affected indices logged in the event.
                             // 4. Highlight those affected indices.
+                            Integer[] arr1 = new Integer[] {3, 7, 11, 10};
+                            e.apply(arr1);
+                            List<Integer> affected = e.getAffectedIndices();
+                            for (int i = 0; i < affected.size(); i++) {
+                                scale.playNote((int) affected.get(i), e.isEmphasized());
+                                notes.highlightNote(i);
+                            }
                             panel.repaint();
                         } else {
                             this.cancel();
@@ -172,4 +181,5 @@ public class ControlPanel extends JPanel {
         });
         add(playButton);
     }
+    
 }

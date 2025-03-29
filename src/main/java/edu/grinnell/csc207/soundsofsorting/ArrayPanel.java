@@ -8,7 +8,6 @@ import javax.swing.JPanel;
  * A drawing panel for visualizing the contents of a @NoteIndices object.
  */
 public class ArrayPanel extends JPanel {
-    @SuppressWarnings("unused")
     private NoteIndices notes;
    
     /**
@@ -24,6 +23,8 @@ public class ArrayPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-        // TODO: fill me in!
+        for (int i = 0; i < notes.getNotes().length; i++) {
+            g.drawRect(ALLBITS, ABORT, WIDTH, notes.getNotes()[i]);
+        }
     }
 }

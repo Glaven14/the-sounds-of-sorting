@@ -6,7 +6,9 @@ Java Version: 21.0.6
 Visual Studio Code: 1.98.0
 
 ## Resources
-
+*   PM explained the merge and quicksort algorithms in more detail 
+and helped me understand how the audiblizer should work.
+*   Aubrey explained how the SortEvents be implemented.  
 *   Project Assignment Page:
 https://osera.cs.grinnell.edu/ttap/data-structures-labs/the-sounds-of-sorting.html
 *   Project Starter Code:
