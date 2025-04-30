@@ -1,5 +1,7 @@
 package edu.grinnell.csc207.soundsofsorting;
 
+import java.util.Random;
+
 /**
  * A collection of indices into a Scale object.
  * These indices are the subject of the various sorting algorithms
@@ -19,15 +21,39 @@ public class NoteIndices {
     
     /**
      * Reinitializes this collection of indices to map into a new scale object
-     * of the given size.  The collection is also shuffled to provide an
+     * of the given size. The collection is also shuffled to provide an
      * initial starting point for the sorting process.
      * @param n the size of the scale object that these indices map into
      */
     public void initializeAndShuffle(int n) {
         notes = new Integer[n];
-        //TODO: Figure out shuffle
+        highlight = new boolean[n];
+        for (int i = 0; i < n; i++) {
+            notes[i] = i;
+        }
+        notes = shuffle(notes);    
     }
     
+    private Integer[] shuffle(Integer[] ranAll) {
+        Integer temp;
+        int newRand;
+        for (int i = ranAll.length - 1; i > 0; i--) {
+            newRand = newRand(i);
+            temp = ranAll[i];
+            ranAll[i] = ranAll[newRand];
+            ranAll[newRand] = temp;            
+        }
+        return ranAll;
+    }
+
+    
+
+    private int newRand(int index) {
+        Random rand = new Random();
+        return rand.nextInt(index);
+    }
+
+
     /** @return the indices of this NoteIndices object */
     public Integer[] getNotes() { 
         return notes;
